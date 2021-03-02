@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{ metadata.title }}{% if title %} - {{ title }}{% endif %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    {% if description %}
+      {% set desc = description | safe %}
+    {% else %}
+      {% set desc = metadata.description | safe %}
+    {% endif %}
+
+    <meta name="description" content="{{ desc }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@dgrammatiko">
+    {% if fulltextImage %}
+    {% set image = fulltextImage.replace('.jpg', '@1200.jpg').replace('.png', '@1200.png') %}
+    <meta name="twitter:image" content="https://dgrammatiko.online{{ image }}">
+    <meta property="og:image" content="https://dgrammatiko.online{{ image }}">
+    {% else %}
+    <meta name="twitter:image" content="https://dgrammatiko.online/static/images/android-chrome-512x512.png">
+    <meta property="og:image" content="https://dgrammatiko.online/static/images/android-chrome-512x512.png">
+    {% endif %}
+    <meta property="og:url" content="https://dgrammatiko.online{{ page.url }}">
+    <meta property="og:title" content="{{ metadata.title }}{% if title %} - {{ title }}{% endif %}">
+    <meta property="og:description" content="{{ desc }}">
+
+    {% set css %}
+      {% include "css/vars.min.css" %}
+      {% include "css/base.min.css" %}
+    {% endset %}
+    <style>{{ css | safe }}</style>
+  </head>
+  <body class="grid-it">
+    {{ layoutContent | safe }}
+  </body>
+</html>

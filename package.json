@@ -1,0 +1,31 @@
+{
+  "name": "invalidate-cache",
+  "version": "0.0.1",
+  "description": "A module tfor invalidating Joomla's static assets",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgrammatiko/invalidate-cache.git"
+  },
+  "author": "Dimitris Grammatikogiannis <d.grammatiko@gmail.com> (https://dgrammatiko.online/)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/dgrammatiko/invalidate-cache/issues"
+  },
+  "homepage": "https://github.com/dgrammatiko/invalidate-cache#readme",
+  "data": {
+    "repo": "https://dgrammatiko.github.io/invalidate-cache",
+    "siteUrl": "https://jinvalidate.netlify.app"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "github:11ty/eleventy",
+    "@11ty/eleventy-plugin-syntaxhighlight": "3.0.6",
+    "adm-zip": "0.5.3",
+    "markdown-it": "12.0.4",
+    "markdown-it-anchor": "7.0.2",
+    "naf-css": "2.0.1"
+  }
+}
