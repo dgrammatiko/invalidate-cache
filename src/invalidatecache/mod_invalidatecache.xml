@@ -31,6 +31,6 @@
     </fields>
   </config>
   <updateservers>
-    <server type="extension" priority="1" name="Invalidate Cache">https://dgrammatiko.github.io/invalidate-cache/j4/update.xml</server>
+    <server type="extension" priority="1" name="Invalidate Cache">https://jinvalidate.netlify.app/j4-update.xml</server>
   </updateservers>
 </extension>
