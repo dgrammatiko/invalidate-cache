@@ -21,10 +21,7 @@ abstract class ModInvalidatecacheHelper
       throw new \Exception('Not Allowed');
     }
 
-    $user  = JFactory::getUser();
-    $admin = $user->authorise('core.admin');
-
-    if ($admin) {
+    if (JFactory::getUser()->authorise('core.admin')) {
       $db           = JFactory::getDbo();
       $query        = $db->getQuery(true);
       $newTimestamp = md5((new JDate())->toSql());
