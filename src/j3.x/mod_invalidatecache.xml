@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="administrator">
+  <name>Invalidate Cache</name>
+  <author>Dimitris Grammatikogiannis</author>
+  <creationDate>March 2021</creationDate>
+  <copyright>(C) 2021 Dimitris Grammatikogiannis</copyright>
+  <license>GNU General Public License version 3</license>
+  <authorEmail>d.grammatiko@gmail.com</authorEmail>
+  <authorUrl>https://dgrammatiko.online</authorUrl>
+  <version>{{version}}</version>
+  <description>Immidiately invalidate ALL the static assets loaded through the Joomla API</description>
+  <files>
+    <filename module="mod_invalidatecache">mod_invalidatecache.php</filename>
+    <filename>helper.php</filename>
+    <folder>tmpl</folder>
+  </files>
+  <media folder="media" destination="mod_invalidatecache">
+    <folder>js</folder>
+  </media>
+  <config>
+    <fields name="params">
+      <fieldset name="advanced">
+        <field
+          name="layout"
+          type="modulelayout"
+          label="JFIELD_ALT_LAYOUT_LABEL"
+          class="form-select"
+         />
+      </fieldset>
+    </fields>
+  </config>
+  <updateservers>
+    <server type="extension" priority="1" name="Invalidate Cache">https://dgrammatiko.github.io/invalidate-cache/j3/update.xml</server>
+  </updateservers>
+</extension>

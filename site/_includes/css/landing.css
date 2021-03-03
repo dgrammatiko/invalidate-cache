@@ -1,0 +1,88 @@
+.btn {
+  display: inline-block;
+  margin: 1rem 0;
+  color: white;
+  font-weight: 500;
+  font-size: 1.3rem;
+  background: var(--primary);
+  color: var(--primary-bg);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1rem 0.9rem;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 900px;
+}
+
+header {
+  padding: 10rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+@media (max-width: 43.75em) {
+  header {
+    padding: 2rem 0;
+  }
+}
+header h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem;
+}
+@media (max-width: 43.75em) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+header h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+@media (max-width: 43.75em) {
+  header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+section {
+  padding: 3.5rem 0;
+}
+@media (max-width: 43.75em) {
+  section {
+    padding: 2rem 0;
+  }
+}
+
+footer {
+  text-align: center;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer ul li {
+  display: inline-block;
+}
+footer ul li a {
+  display: block;
+  padding: 0.4rem 0.7rem;
+}
+
+
+.text--center {
+  text-align: center;
+}
+
+p {
+  max-width: 100% !important;;
+}
