@@ -28,10 +28,7 @@ abstract class InvalidatecacheHelper
       throw new \Exception('Not Allowed');
     }
 
-    $user  = Factory::getUser();
-    $admin = $user->authorise('core.admin');
-
-    if ($admin) {
+    if (Factory::getUser()->authorise('core.admin')) {
       $db           = Factory::getDbo();
       $query        = $db->getQuery(true);
       $newTimestamp = md5((new Date())->toSql());
