@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
-    "@11ty/eleventy-plugin-syntaxhighlight": "3.0.6",
+    "@11ty/eleventy-plugin-syntaxhighlight": "3.1.0",
     "adm-zip": "0.5.3",
     "markdown-it": "12.0.4",
     "markdown-it-anchor": "7.1.0",
