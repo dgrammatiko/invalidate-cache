@@ -9,18 +9,18 @@ namespace Ttc\Module\Invalidatecache\Administrator\Helper;
 
 use Joomla\CMS\Date\Date;
 use Joomla\CMS\Factory;
-use Joomla\CMS\Session\Session;
 
 class InvalidatecacheHelper
 {
   public static function invalidateAjax()
   {
-    if (!Session::checkToken()) {
+    $app = Factory::getApplication();
+    if (!$app->getSession()->checkToken()) {
       throw new \Exception('Not Allowed');
     }
 
-    if (Factory::getUser()->authorise('core.admin')) {
-      $db           = Factory::getDbo();
+    if ($app->getIdentity()->authorise('core.admin')) {
+      $db           = Factory::getContainer()->get('DatabaseDriver');
       $query        = $db->getQuery(true);
       $newTimestamp = md5((new Date())->toSql());
       $fields       = [$db->quoteName('params') . ' = ' . $db->quote('{"mediaversion":"' . $newTimestamp . '"}')];

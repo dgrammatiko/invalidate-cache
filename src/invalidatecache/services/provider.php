@@ -13,10 +13,11 @@ use Joomla\DI\ServiceProviderInterface;
 
 return new class implements ServiceProviderInterface
 {
- 	public function register(Container $container)
-	{
-		$container->registerServiceProvider(new ModuleDispatcherFactory('\\Ttc\\Module\\Invalidatecache'));
-		$container->registerServiceProvider(new HelperFactory('\\Ttc\\Module\\Invalidatecache\\Administrator\\Helper'));
-		$container->registerServiceProvider(new Module);
-	}
+   public function register(Container $container)
+  {
+    $container
+      ->registerServiceProvider(new ModuleDispatcherFactory('\\Ttc\\Module\\Invalidatecache'))
+      ->registerServiceProvider(new HelperFactory('\\Ttc\\Module\\Invalidatecache\\Administrator\\Helper'))
+      ->registerServiceProvider(new Module);
+  }
 };
