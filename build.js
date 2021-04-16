@@ -1,4 +1,4 @@
-const { readFile, writeFile, unlink } = require('fs/promises');
+const { readFile, writeFile, unlink } = require('fs').promises;
 const { version } = require('./package.json');
 
 (async function exec() {
