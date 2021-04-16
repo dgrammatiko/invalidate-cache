@@ -30,7 +30,4 @@
       </fieldset>
     </fields>
   </config>
-  <updateservers>
-    <server type="extension" priority="1" name="Invalidate Cache">https://jinvalidate.netlify.app/j4-update.xml</server>
-  </updateservers>
 </extension>

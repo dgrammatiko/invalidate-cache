@@ -10,18 +10,9 @@ namespace Ttc\Module\Invalidatecache\Administrator\Helper;
 use Joomla\CMS\Date\Date;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Session\Session;
-use Joomla\CMS\UserHelper;
 
-abstract class InvalidatecacheHelper
+class InvalidatecacheHelper
 {
-  /**
-   * This is an Ajax endpoint that will
-   * - execute only for admin users
-   * - change the params column of the `lib_joomla`
-   *   to {"mediaversion":"136e172fe6583c4f7207f11e37835952"}
-   *   where the "136e172fe6583c4f7207f11e37835952" is an MD5 of
-   *   the current date/time the function was called
-   */
   public static function invalidateAjax()
   {
     if (!Session::checkToken()) {
@@ -43,6 +34,13 @@ abstract class InvalidatecacheHelper
       $query->update($db->quoteName('#__extensions'))->set($fields)->where($conditions);
       $db->setQuery($query);
       $db->execute();
+
+      return true;
     }
   }
 }
+
+
+
+//{"mediaversion":"136e172fe6583c4f7207f11e37835952"}
+///{"mediaversion":"a7e6ffa782fcc2f893a57ee6fb1bd2a8"}

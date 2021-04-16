@@ -10,15 +10,15 @@ use Joomla\CMS\Session\Session;
 defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 Factory::getApplication()
-  ->getDocument()
-  ->getWebAssetManager()
-  ->registerAndUseScript(
-    'mod_invalidatecache.default',
-    'mod_invalidatecache/default.js',
-    [],
-    ['type' => 'module'],
-    ['core']
-  );
+	->getDocument()
+	->getWebAssetManager()
+	->registerAndUseScript(
+		'mod_invalidatecache.default',
+		'mod_invalidatecache/default.js',
+		[],
+		['type' => 'module'],
+		['core']
+	);
 
 $icon = <<<SVG
 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 297" style="width: 1.5rem; height:1.5rem; fill: currentColor"><title>Bin</title><defs/>
@@ -27,9 +27,7 @@ $icon = <<<SVG
 SVG;
 
 echo
-'<div class="header-item-content">',
-  '<button class="js_modInvalidatecach d-flex align-items-stretch" style="border: 0; background-color:inherit" title="Invalidate Cache" data-token="', Session::getFormToken(), '" disabled>',
-    '<div class="d-flex align-items-end mx-auto">', $icon, '</div>',
-    '<div class="tiny">Invalidate Cache</div>',
-  '</button>',
-'</div>';
+'<a href="#" class="js_modInvalidatecach header-item-content" title="Invalidate Cache" data-token="', Session::getFormToken(), '" disabled>',
+	'<div class="header-item-icon" aria-hidden="true">', $icon, '</div>',
+	'<div class="header-item-text">Invalidate Cache</div>',
+'</a>';

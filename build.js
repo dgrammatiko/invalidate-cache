@@ -12,10 +12,10 @@ const { version } = require('./package.json');
 
   const zip = new (require('adm-zip'))();
   zip.addLocalFolder('src/invalidatecache/media', 'media');
-  zip.addLocalFolder('src/invalidatecache/tmpl', 'tmpl');
+  zip.addLocalFolder('./src/invalidatecache/services', 'services');
   zip.addLocalFolder('src/invalidatecache/src', 'src');
+  zip.addLocalFolder('src/invalidatecache/tmpl', 'tmpl');
   zip.addLocalFile('mod_invalidatecache.xml', false);
-  zip.addLocalFile('./src/invalidatecache/mod_invalidatecache.php', false);
 
   zip.writeZip(`dist/j4/mod_invalidatecache_${version}.zip`);
 
