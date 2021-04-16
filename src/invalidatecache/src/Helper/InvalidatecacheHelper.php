@@ -55,7 +55,7 @@ class InvalidatecacheHelper
                 $v->version = $newTimestamp;
               }
             }
-            \file_put_contents($filename, \json_encode($fileContent, JSON_PRETTY_PRINT));
+            \file_put_contents($filename, \json_encode($json, JSON_PRETTY_PRINT));
           }
         }
       }
