@@ -5,7 +5,7 @@
  */
 namespace Ttc\Module\Invalidatecache\Administrator\Helper;
 
-\defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
+\defined('_JEXEC') or die;
 
 use Joomla\CMS\Date\Date;
 use Joomla\CMS\Factory;
@@ -35,12 +35,31 @@ class InvalidatecacheHelper
       $db->setQuery($query);
       $db->execute();
 
+      foreach (glob(JPATH_ROOT . '/media/**/joomla.asset.json') as $filename) {
+        if ($filename === JPATH_ROOT . '/media/vendor/joomla.asset.json') {
+          continue;
+        }
+
+        try {
+          $fileContent = \file_get_contents($filename);
+        } catch (\Exception $e) {}
+
+        if ($fileContent) {
+          try {
+            $json = \json_decode($fileContent);
+          } catch (\Exception $e) {}
+
+          if ($json) {
+            foreach ($json->assets as $k => $v) {
+              if (!empty($v->version)) {
+                $v->version = $newTimestamp;
+              }
+            }
+            \file_put_contents($filename, \json_encode($fileContent, JSON_PRETTY_PRINT));
+          }
+        }
+      }
       return true;
     }
   }
 }
-
-
-
-//{"mediaversion":"136e172fe6583c4f7207f11e37835952"}
-///{"mediaversion":"a7e6ffa782fcc2f893a57ee6fb1bd2a8"}
