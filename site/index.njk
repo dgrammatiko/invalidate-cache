@@ -17,8 +17,8 @@ description: A tiny Joomla module for invalidating the cached css/js files
   <div class="container text--center">
     <h2 class="text--center">The problem</h2>
     <p class="text--center">Often, when developing/creating a new website, many intermediate versions of the static assets are created in order to achieve a given design.</p>
-    <p>But when you need to share the staging work, people might have already a previous version of the file, so they will never get to see the changes without cleaning their Browser's cache.</p>
-    <p>And then you will ask people to clear their cache (?). Well, that's utter bullshit! Don't ever ask people to clear their cache!!! NEVER!!!</p>
+    <p>But when you need to share the staging work, people might already have a previous version of the file, so they will never get to see the changes without cleaning their browser's cache.</p>
+    <p>And then you will need to ask people to clear their cache (?). Well, that's utter bullshit! Don't ever ask people to clear their cache!!! NEVER!!!</p>
     <p>NEVER!!!</p>
   </div>
 </section>
@@ -28,7 +28,7 @@ description: A tiny Joomla module for invalidating the cached css/js files
     <h2 class="text--center">The solution</h2>
     <p class="text--center">Joomla already has a mechanism in place for invalidating the browser's cache, and it's called: mediaversion.</p>
     <p class="text--center">Mediaversion, in reality, is just a randomly generated string that is assured to be unique.</p>
-    <p class="text--center">But if Joomla has already this functionality, why aren't we use that instead?</p>
+    <p class="text--center">But if Joomla already has this functionality, why aren't we using that instead?</p>
     <p class="text--center">Well, now we can because there is a simple module that exposes this functionality.</p>
   </div>
 </section>
@@ -38,13 +38,13 @@ description: A tiny Joomla module for invalidating the cached css/js files
     <h2 class="text--center">Installation, setup</h2>
     <ul>
       <li><p>Download the appropriate package from the button above</p>
-      <li><p>Go to modules (admin modules for J#4) and click on the module Invalidate Cache</p>
+      <li><p>Go to modules (admin modules for J4) and click on the module Invalidate Cache</p>
       <li><p>For Joomla 3: select the position footer</p>
       <img src="/images/j3-setup.png" alt="" />
       <li><p>For Joomla 4: select the position status</p>
       <img src="/images/j4-setup.png" alt="" />
       <li><p>Publish the module</p>
-      <li><p>That's all. Every time you click on that button, you are sure that browser caches are busted.</p>
+      <li><p>That's all. Every time you click on that button, you are sure that all browser caches are busted.</p>
       <img src="/images/j3-preview.png" alt="" />
       <img src="/images/j4-preview.png" alt="" />
     </ul>
