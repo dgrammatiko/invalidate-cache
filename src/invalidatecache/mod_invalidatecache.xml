@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" client="administrator">
+<extension type="module" client="administrator" method="upgrade">
   <name>Invalidate Cache</name>
+  <element>mod_invalidatecache</element>
   <author>Dimitris Grammatikogiannis</author>
   <creationDate>March 2021</creationDate>
   <copyright>(C) 2021 Dimitris Grammatikogiannis</copyright>
@@ -11,9 +12,9 @@
   <description>Immidiately invalidate ALL the static assets loaded through the Joomla API</description>
   <namespace path="src">Ttc\Module\Invalidatecache</namespace>
   <files>
-    <filename module="mod_invalidatecache">mod_invalidatecache.php</filename>
     <folder>src</folder>
     <folder>tmpl</folder>
+    <folder>services</folder>
   </files>
   <media folder="media" destination="mod_invalidatecache">
     <folder>js</folder>
