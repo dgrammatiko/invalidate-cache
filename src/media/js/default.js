@@ -1,34 +1,30 @@
-function onError(err) {
-  console.log(err)
-  Joomla.renderMessages({error: ['Something blew up!']});
-}
-
-function onSuccess(resp) {
-  let response;
-  try {
-    response = JSON.parse(resp);
-  } catch (error) {
-    throw new Error('Failed to parse JSON');
-  }
-
-  if (response.error || !response.success) {
-    onError(response);
-  }  else {
-    Joomla.renderMessages({message: ['All static assets were invalidated 🎉']});
-    button.removeAttribute('disabled');
+const renderMessage = (type, msg) => {
+  if (Joomla && Joomla.renderMessages && typeof Joomla.renderMessages === 'function') {
+    Joomla.renderMessages({[type]: msg});
+  } else {
+    alert(msg);
   }
 }
 
-const button = document.querySelector('.js_modInvalidatecach');
-if (button && Joomla && Joomla.request && typeof Joomla.request === 'function') {
-  button.addEventListener('click', () => {
+const onClick = (button) => {
+  button.addEventListener('click', async () => {
+    let resp;
     button.setAttribute('disabled', '');
-    Joomla.request({
-      url: `index.php?option=com_ajax&format=json&module=invalidatecache&method=invalidate&${button.dataset.token}=1`,
-      method: 'POST',
-      onSuccess: onSuccess,
-      onError: onError,
-    });
+    try {
+      resp = await fetch(`index.php?option=com_ajax&format=json&module=invalidatecache&method=invalidate&${button.dataset.token}=1`, {method: 'POST'});
+    } catch(err) {
+      console.log(err);
+      renderMessage('error', ['Something blew up!']);
+    }
+
+    if (typeof resp !== 'object' || !resp.ok || resp.statusText !== 'OK') {
+      renderMessage(error, ['Something blew up!']);
+    }  else {
+      renderMessage('success', ['All static assets were invalidated 🎉']);
+      button.removeAttribute('disabled');
+    }
   });
   button.removeAttribute('disabled');
 }
+
+[].slice.call(document.querySelectorAll('.js_modInvalidatecach')).map((button) => onClick(button));
