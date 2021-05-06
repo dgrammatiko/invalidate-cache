@@ -1,6 +1,6 @@
 {
   "name": "invalidate-cache",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A module tfor invalidating Joomla's static assets",
   "scripts": {
     "build": "eleventy",
