@@ -18,7 +18,7 @@ const onClick = (button) => {
     }
 
     if (typeof resp !== 'object' || !resp.ok || resp.statusText !== 'OK') {
-      renderMessage(error, ['Something blew up!']);
+      renderMessage('error', ['Something blew up!']);
     }  else {
       renderMessage('success', ['All static assets were invalidated 🎉']);
       button.removeAttribute('disabled');
