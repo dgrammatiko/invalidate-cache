@@ -1,7 +1,7 @@
 {
   "name": "invalidate-cache",
-  "version": "0.0.7",
-  "description": "A module tfor invalidating Joomla's static assets",
+  "version": "0.0.8",
+  "description": "A module for invalidating Joomla's static assets",
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve"
