@@ -2,6 +2,7 @@
   "extends": [
     "config:base"
   ],
+  "dependencyDashboard": true,
   "automerge": true,
   "major": {
     "automerge": false
