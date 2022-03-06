@@ -1,6 +1,6 @@
 {
   "name": "invalidate-cache",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A module for invalidating Joomla's static assets",
   "scripts": {
     "build": "eleventy",
@@ -22,10 +22,10 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
-    "@11ty/eleventy-plugin-syntaxhighlight": "3.1.1",
-    "adm-zip": "0.5.5",
-    "markdown-it": "12.0.6",
-    "markdown-it-anchor": "7.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "latest",
+    "adm-zip": "latest",
+    "markdown-it": "latest",
+    "markdown-it-anchor": "latest",
     "naf-css": "2.0.1"
   }
 }

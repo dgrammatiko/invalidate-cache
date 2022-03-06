@@ -6,6 +6,8 @@
 
 defined('_JEXEC') || die('<html><head><script>location.href=location.origin</script></head></html>');
 
+use Joomla\CMS\Uri\Uri;
+
 /** @var $app \Joomla\CMS\Application\CMSApplication */
 $app->getDocument()
   ->getWebAssetManager()
@@ -25,7 +27,7 @@ $icon = <<<SVG
 SVG;
 
 echo
-'<a href="#" class="js_modInvalidatecach header-item-content" title="Invalidate Cache" data-token="', $app->getSession()->getFormToken(), '" disabled>',
+'<a href="#" class="js_modInvalidatecach header-item-content" title="Invalidate Cache" data-token="', $app->getSession()->getFormToken(), '" data-url="', Uri::root(false), '" disabled>',
   '<div class="header-item-icon" aria-hidden="true"><div class="w-auto">', $icon, '</div></div>',
   '<div class="header-item-text">Invalidate Cache</div>',
 '</a>';
