@@ -21,7 +21,7 @@
     "siteUrl": "https://jinvalidate.netlify.app"
   },
   "devDependencies": {
-    "@11ty/eleventy": "github:11ty/eleventy",
+    "@11ty/eleventy": "latest",
     "@11ty/eleventy-plugin-syntaxhighlight": "latest",
     "adm-zip": "latest",
     "markdown-it": "latest",
