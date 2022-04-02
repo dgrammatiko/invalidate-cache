@@ -21,7 +21,7 @@ $icon = <<<SVG
 SVG;
 
 echo
-    '<button type="button" class="js_modInvalidatecach btn" data-token="', JSession::getFormToken(), '" data-url="', JUri::root(false), '" disabled>',
+    '<button type="button" class="js_modInvalidatecach btn" data-token="', JSession::getFormToken(), '" data-url="', JUri::root(false), '/administrator/" disabled>',
       $icon,
       'Invalidate Cache',
     '</button>';

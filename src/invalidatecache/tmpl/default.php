@@ -27,7 +27,7 @@ $icon = <<<SVG
 SVG;
 
 echo
-'<a href="#" class="js_modInvalidatecach header-item-content" title="Invalidate Cache" data-token="', $app->getSession()->getFormToken(), '" data-url="', Uri::root(false), '" disabled>',
+'<a href="#" class="js_modInvalidatecach header-item-content" title="Invalidate Cache" data-token="', $app->getSession()->getFormToken(), '" data-url="', Uri::root(false), '/administrator/" disabled>',
   '<div class="header-item-icon" aria-hidden="true"><div class="w-auto">', $icon, '</div></div>',
   '<div class="header-item-text">Invalidate Cache</div>',
 '</a>';
