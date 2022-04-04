@@ -30,5 +30,5 @@ const renderMessage = (type, msg) => {
       el.removeAttribute('disabled');
     }
   });
-  el.removeAttribute('disabled');
+  button.removeAttribute('disabled');
 });
