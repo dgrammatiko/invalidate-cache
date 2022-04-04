@@ -23,7 +23,7 @@ const renderMessage = (type, msg) => {
     }
 
     if (typeof resp !== 'object' || resp.status !== 200) {
-      console.error(err);
+      console.error(resp);
       renderMessage('error', ['Something blew up!']);
     }  else {
       renderMessage('success', ['All static assets were invalidated 🎉']);
