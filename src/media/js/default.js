@@ -6,29 +6,29 @@ const renderMessage = (type, msg) => {
   }
 }
 
-const onClick = (button) => {
+[...document.querySelectorAll('.js_modInvalidatecach')]
+.forEach((button) => {
   button.addEventListener('click', async (event) => {
     let resp;
-    button.setAttribute('disabled', '');
-    const url = new URL(`${button.dataset.url}index.php?option=com_ajax&format=json&module=invalidatecache&method=invalidate&${button.dataset.token}=1`);
-    console.log(url.href);
+    const el = event.currentTarget;
+    el.setAttribute('disabled', '');
+    const url = new URL(`${el.dataset.url}administrator/index.php?option=com_ajax&format=json&module=invalidatecache&method=invalidate&${el.dataset.token}=1`);
     if (!url) return;
 
     try {
       resp = await fetch(url, {method: 'POST'});
     } catch(err) {
-      console.log(err);
+      console.error(err);
       renderMessage('error', ['Something blew up!']);
     }
 
-    if (typeof resp !== 'object' || !resp.ok) {
+    if (typeof resp !== 'object' || resp.status !== 200) {
+      console.error(err);
       renderMessage('error', ['Something blew up!']);
     }  else {
       renderMessage('success', ['All static assets were invalidated 🎉']);
-      button.removeAttribute('disabled');
+      el.removeAttribute('disabled');
     }
   });
-  button.removeAttribute('disabled');
-}
-
-[].slice.call(document.querySelectorAll('.js_modInvalidatecach')).map((button) => onClick(button));
+  el.removeAttribute('disabled');
+});
