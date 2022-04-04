@@ -16,7 +16,7 @@ class InvalidatecacheHelper
   public static function invalidateAjax()
   {
     $app = Factory::getApplication();
-    if (!$app->getSession()->checkToken()) {
+    if (!$app->getSession()->checkToken('get')) {
       throw new \Exception('Not Allowed');
     }
 
@@ -45,11 +45,15 @@ class InvalidatecacheHelper
         $model = $cacheComponent->getMVCFactory()
         ->createModel('Cache', 'Administrator', ['ignore_request' => true]);
 
-        $result = $model->cleanlist(['_media_version']);
-        // Nevermind, we don't care about the result.
+        try {
+          $result = $model->cleanlist(['_media_version']);
         // if ($result !== []) {
         //   return false;
         // }
+        } catch (\Exception $e) { /** Nothing */}
+
+
+
       }
 
       foreach (glob(JPATH_ROOT . '/media/**/joomla.asset.json') as $filename) {

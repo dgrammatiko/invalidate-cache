@@ -17,7 +17,7 @@ abstract class ModInvalidatecacheHelper
    */
   public static function invalidateAjax()
   {
-    if (!JSession::checkToken()) {
+    if (!JSession::checkToken('get')) {
       throw new \Exception('Not Allowed');
     }
 

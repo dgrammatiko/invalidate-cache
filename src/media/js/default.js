@@ -16,7 +16,7 @@ const renderMessage = (type, msg) => {
     if (!url) return;
 
     try {
-      resp = await fetch(url, {method: 'POST'});
+      resp = await fetch(url, {method: 'GET'});
     } catch(err) {
       console.error(err);
       renderMessage('error', ['Something blew up!']);
