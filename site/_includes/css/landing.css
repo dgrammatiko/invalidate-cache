@@ -15,6 +15,12 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
+.btn:focus,
+.btn:hover {
+  background: var(--secondary);
+  color: var(--secondary-bg);
+}
+
 .container {
   margin: 0 auto;
   width: 90%;
