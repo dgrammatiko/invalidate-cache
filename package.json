@@ -4,7 +4,8 @@
   "description": "A module for invalidating Joomla's static assets",
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve"
+    "serve": "eleventy --serve",
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",
